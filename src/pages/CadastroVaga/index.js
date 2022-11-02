@@ -1,7 +1,9 @@
+import Header from "../../components/Header";
+
 const CadastroVaga = () => {
-    return <div>
-        teste
-    </div>
+    return <>
+        <Header />
+    </>
 }
 
 export default CadastroVaga;
