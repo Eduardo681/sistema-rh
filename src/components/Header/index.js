@@ -1,20 +1,22 @@
+import { NavLink } from "react-router-dom";
+
 const Header = () => {
-    return <header>
-        <img src="logo.svg" alt="Logo"/>
-        <nav>
-            <ul>
-                <li>
-                    Dados empresa
-                </li>
-                <li>
-                    Cadastro vagas
-                </li>
-                <li>
-                    Resultados
-                </li>
-            </ul>
-        </nav>
-    </header>
+  return <header>
+    <img src="logo.svg" alt="Logo" />
+    <nav>
+      <ul>
+        <NavLink to="/cadastrar-empresa">
+          Dados empresa
+        </NavLink>
+        <NavLink to="/cadastrar-vaga">
+          Cadastro vagas
+        </NavLink>
+        <NavLink to="/resultados">
+          Resultados
+        </NavLink>
+      </ul>
+    </nav>
+  </header>
 }
 
 export default Header;
