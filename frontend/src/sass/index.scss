@@ -98,6 +98,15 @@ header {
         min-height: 100px;
       }
     }
+
+    button {
+      background: $primary;
+      color: #fff;
+      padding: 10px 100px;
+      border: none;
+      border-radius: 15px;
+      font-weight: bold;
+    }
   }
 }
 

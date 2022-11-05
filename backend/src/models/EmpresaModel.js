@@ -30,7 +30,7 @@ class EmpresaModel {
     async update(id, missao, visao, valores, politica, penalidades) {
         let empresa = await this.findById(id);
         if (empresa !== undefined) {
-            let editEmpresa = {};
+            let editEmpresa = empresa;
             if (missao !== undefined && missao.trim() !== '') {
                 editEmpresa.missao = missao;
             }
@@ -46,7 +46,6 @@ class EmpresaModel {
             if (penalidades !== undefined && penalidades.trim() !== '') {
                 editEmpresa.penalidades = penalidades;
             }
-
             try {
                 await knex.update(editEmpresa).where({id: id}).table("empresa")
                 return {status: true}
@@ -55,21 +54,6 @@ class EmpresaModel {
             }
         } else {
             return {status: false, err: 'A empresa não existe'};
-        }
-    }
-
-    async delete(id) {
-        let empresa = await this.findById(id);
-        if (empresa !== undefined) {
-            try {
-                await knex.delete().where({id: id}).table(empresa);
-                return {status: true}
-            } catch (err) {
-                throw err;
-                return {status: false, err: err}
-            }
-        } else {
-            return {status: false, err: "A empresa não existe."}
         }
     }
 }

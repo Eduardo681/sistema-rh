@@ -1,9 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
+import {createBrowserRouter, Navigate, RouterProvider} from "react-router-dom";
 import CadastroEmpresa from "./pages/CadastroEmpresa";
 import CadastroVaga from "./pages/CadastroVaga";
 import "./sass/index.scss";
+import axios from 'axios';
+
+
+axios.defaults.baseURL = 'http://localhost:3004';
+axios.defaults.headers.put['Content-Type'] = 'application/json';
+axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 const router = createBrowserRouter([
   {
