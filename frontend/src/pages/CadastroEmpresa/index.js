@@ -31,37 +31,41 @@ const CadastroEmpresa = () => {
                 Dados empresa
             </div>
             <form>
-                <div className="form-control">
-                    <label htmlFor="nome">Nome</label>
-                    <input type="text" name="nome" value={empresa.nome}
-                           onChange={t => setEmpresa({...empresa, nome: t.target.value})}/>
+                <div className="side">
+                    <div className="form-control">
+                        <label htmlFor="nome">Nome</label>
+                        <input type="text" name="nome" value={empresa.nome}
+                               onChange={t => setEmpresa({...empresa, nome: t.target.value})}/>
+                    </div>
+                    <div className="form-control">
+                        <label htmlFor="politica">Politica</label>
+                        <textarea type="text" name="politica" value={empresa.politica}
+                                  onChange={t => setEmpresa({...empresa, politica: t.target.value})}/>
+                    </div>
+                    <div className="form-control">
+                        <label htmlFor="penalidades">Penalidades</label>
+                        <textarea type="text" name="penalidades" value={empresa.penalidades}
+                                  onChange={t => setEmpresa({...empresa, penalidades: t.target.value})}/>
+                    </div>
                 </div>
-                <div className="form-control">
-                    <label htmlFor="missao">Missão</label>
-                    <textarea type="text" name="missao" value={empresa.missao}
-                              onChange={t => setEmpresa({...empresa, missao: t.target.value})}/>
-                </div>
-                <div className="form-control">
-                    <label htmlFor="visao">Visão</label>
-                    <textarea type="text" name="visao" value={empresa.visao}
-                              onChange={t => setEmpresa({...empresa, visao: t.target.value})}/>
-                </div>
-                <div className="form-control">
-                    <label htmlFor="valores">Valores</label>
-                    <textarea type="text" name="valores" value={empresa.valores}
-                              onChange={t => setEmpresa({...empresa, valores: t.target.value})}/>
-                </div>
-                <div className="form-control">
-                    <label htmlFor="politica">Politica</label>
-                    <textarea type="text" name="politica" value={empresa.politica}
-                              onChange={t => setEmpresa({...empresa, politica: t.target.value})}/>
-                </div>
-                <div className="form-control">
-                    <label htmlFor="penalidades">Penalidades</label>
-                    <textarea type="text" name="penalidades" value={empresa.penalidades}
-                              onChange={t => setEmpresa({...empresa, penalidades: t.target.value})}/>
-                </div>
-                <button type={"button"} onClick={salvarEmpresa}>Salvar</button>
+               <div className="side">
+                   <div className="form-control">
+                       <label htmlFor="missao">Missão</label>
+                       <textarea type="text" name="missao" value={empresa.missao}
+                                 onChange={t => setEmpresa({...empresa, missao: t.target.value})}/>
+                   </div>
+                   <div className="form-control">
+                       <label htmlFor="visao">Visão</label>
+                       <textarea type="text" name="visao" value={empresa.visao}
+                                 onChange={t => setEmpresa({...empresa, visao: t.target.value})}/>
+                   </div>
+                   <div className="form-control">
+                       <label htmlFor="valores">Valores</label>
+                       <textarea type="text" name="valores" value={empresa.valores}
+                                 onChange={t => setEmpresa({...empresa, valores: t.target.value})}/>
+                   </div>
+                   <button type={"button"} onClick={salvarEmpresa}>Salvar</button>
+               </div>
             </form>
         </div>
     </>

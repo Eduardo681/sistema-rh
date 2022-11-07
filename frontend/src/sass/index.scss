@@ -63,8 +63,15 @@ header {
     color: $primary;
   }
 
+
+
   form {
     margin-top: 25px;
+    display: flex;
+
+    .side {
+      width: 50%;
+    }
 
     .form-control {
       display: flex;
@@ -102,7 +109,7 @@ header {
     button {
       background: $primary;
       color: #fff;
-      padding: 10px 100px;
+      padding: 15px 120px;
       border: none;
       border-radius: 15px;
       font-weight: bold;
