@@ -5,6 +5,7 @@ import CadastroEmpresa from "./pages/CadastroEmpresa";
 import CadastroVaga from "./pages/CadastroVaga";
 import "./sass/index.scss";
 import axios from 'axios';
+import CadastroTeste from "./pages/CadastroTeste";
 
 
 axios.defaults.baseURL = 'http://localhost:3004';
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
   {
     path: "/cadastrar-empresa",
     element: <CadastroEmpresa />,
+  },
+  {
+    path: "/cadastrar-teste",
+    element: <CadastroTeste />,
   },
 ]);
 
