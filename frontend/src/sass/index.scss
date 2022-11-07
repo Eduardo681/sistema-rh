@@ -35,7 +35,7 @@ header {
       padding: 0;
       height: 100%;
 
-      li {
+      li, a {
         font-family: 'Roboto', serif;
         font-style: normal;
         font-weight: 700;
@@ -44,7 +44,12 @@ header {
 
         display: flex;
         align-items: center;
+        color: #000;
+        text-decoration: none;
 
+        &.active {
+          color: $primary;
+        }
       }
     }
   }
