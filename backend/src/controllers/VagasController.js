@@ -39,23 +39,27 @@ class VagasController {
     }
 
     async create(req, res) {
-        let {
-            nome_vaga, salario, plano_de_carreira, descricao, perc_acerto_logico,
-            perc_acerto_interpretacao, perc_acerto_tecnico, requisitos, diferenciais
-        } = req.body;
-        let result = await Vagas.create(nome_vaga, salario, plano_de_carreira, descricao, perc_acerto_logico,
-            perc_acerto_interpretacao, perc_acerto_tecnico, requisitos, diferenciais);
-        if (result !== undefined) {
-            if (result.status) {
-                res.send('Vaga criada com sucesso');
-                res.json(result);
+        try {
+            let {
+                nome_vaga, salario, plano_de_carreira, descricao, perc_acerto_logico,
+                perc_acerto_interpretacao, perc_acerto_tecnico, requisitos, diferenciais
+            } = req.body;
+            let result = await Vagas.create(nome_vaga, salario, plano_de_carreira, descricao, perc_acerto_logico,
+                perc_acerto_interpretacao, perc_acerto_tecnico, requisitos, diferenciais);
+            if (result !== undefined) {
+                if (result.status) {
+                    res.send('Vaga criada com sucesso');
+                    res.json(result);
+                } else {
+                    res.status(406);
+                    res.json(result);
+                }
             } else {
-                res.status(406);
-                res.json(result);
+                res.status(500);
+                res.json({err: 'Ocorreu um erro no servidor'});
             }
-        } else {
-            res.status(500);
-            res.json({err: 'Ocorreu um erro no servidor'});
+        } catch (err) {
+            res.send(err)
         }
     }
 
