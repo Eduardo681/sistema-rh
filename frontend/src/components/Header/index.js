@@ -11,6 +11,9 @@ const Header = () => {
         <NavLink to="/cadastrar-vaga">
           Cadastro vagas
         </NavLink>
+        <NavLink to="/cadastrar-teste">
+          Cadastro teste
+        </NavLink>
         <NavLink to="/resultados">
           Resultados
         </NavLink>
